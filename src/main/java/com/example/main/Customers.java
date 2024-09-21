@@ -1,4 +1,5 @@
-package com.example.configuration;
+package com.example.main;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -6,7 +7,15 @@ public class Customers {
     private int custid;
     private String custname;
     private String coursename;
+    @Autowired
+    private Technologies techdetail;
 
+    public Technologies getTechdetail() {
+        return techdetail;
+    }
+    public void setTechdetail(Technologies techdetail) {
+        this.techdetail = techdetail;
+    }
     public int getCustid() {
         return custid;
     }
@@ -28,5 +37,6 @@ public class Customers {
     public void display()
     {
         System.out.println("Object Returned Successfully");
+        techdetail.tech();
     }
 }
